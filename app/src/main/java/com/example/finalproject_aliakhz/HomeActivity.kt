@@ -224,7 +224,7 @@ fun ProductCard(
             Icon(
                 imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
                 contentDescription = "Favorite",
-                tint = if (isFavorite) Color(0xFFB71C1C) else Color.Gray,
+                tint = if (isFavorite) Color(0xFFB72727) else Color.Gray,
                 modifier = Modifier
                     .align(Alignment.TopEnd)
                     .padding(8.dp)
