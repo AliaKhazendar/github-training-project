@@ -177,7 +177,7 @@ fun HomeScreen(
                         )
                     }
                 }
-                
+
 
                 // Products
                 items(products) { product ->

@@ -119,7 +119,9 @@ fun CategoriesScreen(
                         Text(
                             "Categories",
                             fontWeight = FontWeight.Bold,
-                            fontSize = 18.sp
+                            fontSize = 18.sp,
+                            color = Color(0xFF6200EE) // تغيير لون العنوان
+
                         )
                     }
                 },
@@ -156,7 +158,7 @@ private fun CategoryCard(category: Category, onClick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(160.dp)
+            .height(180.dp) // تعديل: زيادة ارتفاع Card
             .clip(RoundedCornerShape(16.dp))
             .clickable { onClick() }
     ) {
@@ -175,7 +177,7 @@ private fun CategoryCard(category: Category, onClick: () -> Unit) {
                 .align(Alignment.BottomCenter)
                 .background(
                     Brush.verticalGradient(
-                        colors = listOf(Color.Transparent, Color(0x99000000))
+                        colors = listOf(Color.Transparent, Color(0xCC000000)) // أغمق gradient
                     )
                 )
         )
@@ -188,7 +190,7 @@ private fun CategoryCard(category: Category, onClick: () -> Unit) {
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(bottom = 8.dp)
+                .padding(bottom = 12.dp) // زيادة المسافة عن أسفل Card
         )
     }
 }
