@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-private val PrimaryRed = Color(0xFFB71C1C)
+private val PrimaryYellow = Color(0xFFFF9800)
 private val FieldBg    = Color(0xFFF5F0EB)
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,7 +47,7 @@ fun EditProfileBottomSheet(
             ) {
                 IconButton(onClick = onDismiss) {
                     Icon(Icons.Default.Close, contentDescription = "Close",
-                        tint = PrimaryRed, modifier = Modifier.size(22.dp))
+                        tint = PrimaryYellow, modifier = Modifier.size(22.dp))
                 }
             }
         }
@@ -69,7 +69,7 @@ fun EditProfileBottomSheet(
                 onClick = { onDone(name, phone, email) },
                 modifier = Modifier.fillMaxWidth().height(52.dp),
                 shape = RoundedCornerShape(10.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = PrimaryRed)
+                colors = ButtonDefaults.buttonColors(containerColor = PrimaryYellow)
             ) {
                 Text("Done", color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.SemiBold)
             }
