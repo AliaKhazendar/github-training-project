@@ -60,6 +60,7 @@ data class Product(
     val sold: Int,
     val imageRes: Int
 )
+
 fun Product.toDetail(): ProductDetail {
     return ProductDetail(
         id = title.hashCode(),
@@ -72,12 +73,14 @@ fun Product.toDetail(): ProductDetail {
     )
 }
 //@Preview
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onProductClick: (Product) -> Unit,
     favoriteProducts: List<FavoriteProduct> = emptyList(),
     onFavoriteToggle: (Product) -> Unit = {}
 ) {
+
     val products = listOf(
         Product("Brushes...", "Qmele", "$20", "$18", 70, R.drawable.brushes),
         Product("Device Laser Hair Rem...", "Qmele", "$15", "$10", 50, R.drawable.device),
@@ -89,6 +92,27 @@ fun HomeScreen(
 //        bottomBar = {
 //            BottomNavBar(selectedIndex = 1)
 //        }
+        topBar = {
+            TopAppBar(
+                title = { Text("  Good Morning, Alia") },
+                navigationIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Menu,
+                        contentDescription = "Menu",
+                        modifier = Modifier.padding(start = 16.dp)
+                    )
+                },
+                actions = {
+                    Icon(Icons.Default.Search, contentDescription = "Search", modifier = Modifier.padding(end = 16.dp))
+                    Icon(Icons.Default.Notifications, contentDescription = "Notifications", modifier = Modifier.padding(end = 16.dp))
+                },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = Color(0xFF6200EE), // لون الخلفية
+                    titleContentColor = Color.White,    // لون النص
+                    actionIconContentColor = Color.White // لون الأيقونات
+                )
+            )
+        }
     )
     { paddingValues ->
 
@@ -153,6 +177,7 @@ fun HomeScreen(
                         )
                     }
                 }
+                
 
                 // Products
                 items(products) { product ->
