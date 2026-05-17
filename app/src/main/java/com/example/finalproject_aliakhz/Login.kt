@@ -47,7 +47,7 @@ fun LoginScreen(onLoginClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFD3D0C4))
+            .background(Color(0xFFEFEFEF)) // تعديل: لون خلفية أخف
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -56,8 +56,8 @@ fun LoginScreen(onLoginClick: () -> Unit) {
             contentDescription = "Header Image",
             modifier = Modifier
                 .fillMaxWidth()
-                .height(300.dp),
-            contentScale = ContentScale.Crop
+                .height(320.dp), // تعديل: ارتفاع أكبر للصورة
+                    contentScale = ContentScale.Crop
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(
@@ -74,7 +74,7 @@ fun LoginScreen(onLoginClick: () -> Unit) {
             },
             placeholder = { Text("Enter Your Phone Number") },
             leadingIcon = { Text("+972") },
-            shape = RoundedCornerShape(8.dp),
+            shape = RoundedCornerShape(12.dp), // تعديل: زوايا أكثر نعومة,
             isError = errorMessage.isNotEmpty(),
             modifier = Modifier
                 .fillMaxWidth()
